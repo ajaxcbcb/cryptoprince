@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KAI x Crypto Prince • Christmas Special 2025</title>
+
+<style>
+    :root {
+        --bg: #050510;
+        --bg-soft: #08081a;
+        --accent: #ffcf40;
+        --accent-strong: #ffb100;
+        --text-main: #f5f5ff;
+        --text-soft: #b8b8d2;
+        --card: rgba(15, 15, 35, 0.85);
+        --card-border: rgba(255, 255, 255, 0.1);
+        --radius-xl: 22px;
+        --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+        background: radial-gradient(circle at top, #1a1a3a 0, #050510 55%);
+        color: var(--text-main);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    }
+
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Subtle background glow layer */
+    .bg-glow {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+        background:
+            radial-gradient(circle at 15% 0%, rgba(0, 255, 120, 0.18) 0, transparent 55%),
+            radial-gradient(circle at 85% 10%, rgba(255, 207, 64, 0.2) 0, transparent 55%),
+            radial-gradient(circle at 50% 100%, rgba(88, 101, 242, 0.25) 0, transparent 60%);
+        opacity: 0.8;
+        animation: bgFloat 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgFloat {
+        0% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(0, 10px, 0); }
+        100% { transform: translate3d(0, -10px, 0); }
+    }
+
+    main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 18px 16px 60px;
+    }
+
+    section {
+        padding: 28px 0;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* HERO - mobile first */
+    .hero {
+        padding-top: 18px;
+    }
+
+    .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .brand-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #000;
+        border: 2px solid rgba(0, 255, 120, 0.9);
+        box-shadow: 0 0 16px rgba(0, 255, 120, 1);
+        flex-shrink: 0;
+    }
+
+    .brand-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .brand-text {
+        font-size: 0.76rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+    }
+
+    .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 10px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.8rem;
+        color: var(--text-soft);
+    }
+
+    .hero-title {
+        margin-top: 16px;
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 750;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(120deg, #ffe58f, #ffd666, #ffc53d);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .hero-subtitle {
+        margin-top: 14px;
+        font-size: 0.98rem;
+        color: var(--text-soft);
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+        color: #111;
+        font-weight: 600;
+        box-shadow: 0 0 18px rgba(255, 191, 0, 0.5);
+    }
+
+    .btn-primary:active {
+        transform: scale(0.96);
+        box-shadow: 0 0 8px rgba(255, 191, 0, 0.4);
+    }
+
+    .btn-ghost {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--text-soft);
+    }
+
+    .btn-ghost:active {
+        transform: scale(0.96);
+        opacity: 0.8;
+    }
+
+    .hero-card {
+        margin-top: 22px;
+        background: linear-gradient(145deg, rgba(20, 20, 40, 0.9), rgba(10, 10, 24, 0.96));
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--card-border);
+        box-shadow: var(--shadow-soft);
+        padding: 12px;
+    }
+
+    .hero-card-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--text-soft);
+        margin-bottom: 8px;
+    }
+
+    .hero-image-wrapper img {
+        width: 100%;
+        border-radius: 16px;
+        display: block;
+    }
+
+    /* Sections */
+    .section-tag {
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .divider {
+        width: 60px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+        margin: 10px 0 16px;
+    }
+
+    p {
+        font-size: 0.96rem;
+        color: var(--text-soft);
+        line-height: 1.7;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 10px;
+    }
+
+    li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+        color: var(--text-soft);
+    }
+
+    li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        font-size: 0.78rem;
+        color: var(--accent);
+    }
+
+    .card {
+        margin-top: 18px;
+        background: var(--card);
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--card-border);
+        padding: 14px;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .card-title {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        margin-bottom: 6px;
+    }
+
+    .card-main {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--text-main);
+    }
+
+    .card-sub {
+        font-size: 0.9rem;
+        color: var(--text-soft);
+    }
+
+    .img-card img {
+        width: 100%;
+        border-radius: 16px;
+        display: block;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.75rem;
+        color: #8b8ba0;
+        padding: 20px 16px 28px;
+    }
+
+    /* Desktop tweaks */
+    @media (min-width: 768px) {
+        main {
+            padding: 32px 24px 80px;
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: 2.4rem;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="bg-glow"></div>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <div class="brand-row">
+                <div class="brand-logo">
+                    <img src="IMG_20251201_025022_480.jpg" alt="Crypto Prince Logo" />
+                </div>
+                <div class="brand-text">
+                    KAI x CRYPTO PRINCE • CHRISTMAS SPECIAL 2025
+                </div>
+            </div>
+
+            <div class="hero-pill">
+                🎄 Christmas 2025  ·  50% Deposit Bonus
+            </div>
+
+            <h1 class="hero-title">
+                Christmas <span class="hero-gradient">Special 2025</span><br />
+                KAI x Crypto Prince
+            </h1>
+
+            <p class="hero-subtitle">
+                A Christmas 2025 campaign on KAI with Crypto Prince and 6 KOLs.  
+                New users who complete KYC and deposit at least 50 USDT receive a 50 percent bonus for futures trading.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#mechanics" class="btn-primary">How it works ⬇</a>
+                <a href="#proof" class="btn-ghost">Why it converts</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-card-label">Previous community drop</div>
+            <div class="hero-image-wrapper">
+                <img src="crypto_prince_tweet.png" alt="Crypto Prince Giveaway Tweet" />
+            </div>
+        </div>
+    </section>
+
+    <!-- MECHANICS -->
+    <section id="mechanics">
+        <div class="section-tag">Mechanics</div>
+        <h2>How the Christmas bonus works</h2>
+        <div class="divider"></div>
+
+        <p>To qualify for the 50 percent Christmas bonus on KAI:</p>
+
+        <ul>
+            <li>Sign up using the official KAI x Crypto Prince campaign link.</li>
+            <li>Complete KYC verification on KAI.</li>
+            <li>Deposit at least <strong>50 USDT</strong> into the account.</li>
+        </ul>
+
+        <p style="margin-top:10px;">
+            Once these steps are done, the 50 percent bonus is credited as futures trading credit for the user to start trading.
+        </p>
+
+        <div class="card">
+            <div class="card-title">Simple funnel</div>
+            <div class="card-main">Sign up → KYC → Deposit → Bonus → Trade</div>
+            <div class="card-sub">
+                The message from all KOLs is aligned on this one clear flow so users understand exactly what they need to do.
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF -->
+    <section id="proof">
+        <div class="section-tag">Performance Proof</div>
+        <h2>Why this campaign has teeth</h2>
+        <div class="divider"></div>
+
+        <p>
+            The community is already trained to respond to Crypto Prince campaigns:
+            sign up, KYC, deposit, comment UID, wait for rewards.  
+            This Christmas push on KAI uses the same structure, backed by 6 additional KOLs to expand reach.
+        </p>
+
+        <div class="card img-card" style="margin-top:16px;">
+            <div class="card-title">Trading metrics snapshot</div>
+            <img src="bybit_dashboard.jpg" alt="Affiliate Dashboard" />
+            <div class="card-sub" style="margin-top:8px;">
+                Existing KOL performance already shows real trading volume and active users, not just empty impressions.
+                This Christmas special is positioned to turn that behaviour into KAI volume.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    KAI x Crypto Prince • Christmas Special 2025 · Draft mobile landing layout.
+</footer>
+
+<script>
+    // Scroll reveal
+    const sections = document.querySelectorAll("section");
+    const revealObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    sections.forEach(sec => revealObserver.observe(sec));
+</script>
+
+</body>
+</html>           Crypto Prince and his KOL circle provide the social proof and consistency
+                    that get users to commit.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USER REQUIREMENTS -->
+    <section>
+        <div class="section-tag">User Journey</div>
+        <h2>User Requirements</h2>
+        <div class="divider"></div>
+        <p>To qualify for the 50 percent Futures Bonus, each user must:</p>
+        <ul>
+            <li>Register using the official campaign link shared by Crypto Prince or the 6 KOLs.</li>
+            <li>Complete KYC verification.</li>
+            <li>Deposit a minimum of <strong>50 USDT</strong>.</li>
+            <li>Once verified, receive a <strong>50 percent Futures Bonus</strong> credited within 24–48 hours.</li>
+        </ul>
+    </section>
+
+    <!-- HOW USERS JOIN -->
+    <section>
+        <div class="section-tag">Community Flow</div>
+        <h2>How Users Join</h2>
+        <div class="divider"></div>
+        <ul>
+            <li>Retweet the main campaign post from Crypto Prince.</li>
+            <li>Comment their UID under the post as proof of participation.</li>
+            <li>Complete registration, KYC and minimum deposit.</li>
+            <li>Receive the bonus and start trading futures using the credited margin.</li>
+        </ul>
+    </section>
+
+    <!-- KOL STRUCTURE WITH METRICS -->
+    <section>
+        <div class="section-tag">KOL Structure</div>
+        <h2>Crypto Prince and Global KOL Squad</h2>
+        <div class="divider"></div>
+        <p>
+            Crypto Prince drives the core narrative while 6 global KOLs amplify the message to their
+            communities, converting impressions into verified users. The campaign builds steady progress
+            across 2025, with a coordinated, high–energy push planned for Christmas as the flagship moment.
+        </p>
+
+        <div class="card-row">
+            <div class="card">
+                <div class="card-title">Main KOL</div>
+                <div class="card-main">Crypto Prince</div>
+                <div class="card-sub">
+                    Sets the tone, anchors trust and leads the community into the Christmas push.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Support KOLs</div>
+                <div class="card-main">6 global voices</div>
+                <div class="card-sub">
+                    Convert their own audiences through reposts, UID calls and clear guidance
+                    to the Christmas bonus event.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Momentum</div>
+                <div class="card-main">Year-long build up</div>
+                <div class="card-sub">
+                    Traffic grows gradually, but Christmas is positioned as the peak moment where users
+                    expect the biggest rewards.
+                </div>
+            </div>
+        </div>
+
+        <!-- KOL lineup with metrics -->
+        <div class="card-row" style="margin-top:26px;">
+            <div class="card">
+                <div class="card-title">KOL #1</div>
+                <div class="card-main">@Web3GameMaster</div>
+                <div class="card-sub">
+                    <div><strong>Followers:</strong> ~8.6K</div>
+                    <div><strong>Typical reach:</strong> campaign posts regularly hit 4-figure views; strong web3 gaming niche.</div>
+                    <div style="margin-top:6px;">
+                        <a href="https://x.com/Web3GameMaster" target="_blank"
+                           style="color: var(--accent); text-decoration:none;">
+                            x.com/Web3GameMaster ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">KOL #2</div>
+                <div class="card-main">@Vamtann</div>
+                <div class="card-sub">
+                    <div><strong>Followers:</strong> ~24K</div>
+                    <div><strong>Typical reach:</strong> promo threads and launchpool posts often show 5-figure view counts.</div>
+                    <div style="margin-top:6px;">
+                        <a href="https://x.com/Vamtann" target="_blank"
+                           style="color: var(--accent); text-decoration:none;">
+                            x.com/Vamtann ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">KOL #3</div>
+                <div class="card-main">@0xkopil</div>
+                <div class="card-sub">
+                    <div><strong>Followers:</strong> ~23.6K</div>
+                    <div><strong>Typical reach:</strong> degen / alpha content with 4–5 digit impressions on key posts.</div>
+                    <div style="margin-top:6px;">
+                        <a href="https://x.com/0xkopil" target="_blank"
+                           style="color: var(--accent); text-decoration:none;">
+                            x.com/0xkopil ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">KOL #4</div>
+                <div class="card-main">@oxdeer_</div>
+                <div class="card-sub">
+                    <div><strong>Followers:</strong> ~6.3K</div>
+                    <div><strong>Typical reach:</strong> RWA-focused threads with healthy replies and mid-4-figure views.</div>
+                    <div style="margin-top:6px;">
+                        <a href="https://x.com/oxdeer_" target="_blank"
+                           style="color: var(--accent); text-decoration:none;">
+                            x.com/oxdeer_ ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">KOL #5</div>
+                <div class="card-main">@Raph_GMI</div>
+                <div class="card-sub">
+                    <div><strong>Followers:</strong> ~7K</div>
+                    <div><strong>Typical reach:</strong> education and shill content with strong quote-tweet and reply activity.</div>
+                    <div style="margin-top:6px;">
+                        <a href="https://x.com/Raph_GMI" target="_blank"
+                           style="color: var(--accent); text-decoration:none;">
+                            x.com/Raph_GMI ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">KOL #6</div>
+                <div class="card-main">@JaypeeJnr2</div>
+                <div class="card-sub">
+                    <div><strong>Followers:</strong> ~8K</div>
+                    <div><strong>Typical reach:</strong> community-heavy threads and giveaways with consistent 4-figure impressions.</div>
+                    <div style="margin-top:6px;">
+                        <a href="https://x.com/JaypeeJnr2" target="_blank"
+                           style="color: var(--accent); text-decoration:none;">
+                            x.com/JaypeeJnr2 ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top:18px;font-size:0.86rem;color:#8c8ca5;">
+            *Follower counts rounded from current public profiles. Exact average impressions can be exported
+            from X Analytics per KOL if needed for internal due diligence.
+        </p>
+    </section>
+
+    <!-- PAST EVENT MOMENTUM -->
+    <section id="momentum">
+        <div class="section-tag">Proof of Momentum</div>
+        <h2>Past Event – community already trained</h2>
+        <div class="divider"></div>
+        <p>
+            Crypto Prince’s previous KAI giveaway proved that his audience understands and
+            responds to this structure: register, KYC, deposit, comment UID, wait for bonus.
+            That anticipation is the foundation for this long term 2025 campaign.
+        </p>
+
+        <div class="tweet-panel">
+            <div class="tweet-label">Example – previous giveaway tweet</div>
+            <img src="crypto_prince_tweet.png" alt="Crypto Prince previous giveaway tweet" />
+            <div class="tweet-caption">
+                The community already expects these drops. The more consistently they see them,
+                the more they participate and convert.
+            </div>
+        </div>
+    </section>
+
+    <!-- PERFORMANCE PROOF -->
+    <section id="performance">
+        <div class="section-tag">Performance Proof</div>
+        <h2>Why this KOL is worth backing</h2>
+        <div class="divider"></div>
+        <p>
+            Beyond impressions there is hard performance data. One of the key KOL accounts already shows
+            strong trading behaviour from referred users, which proves this community does more than just
+            click and like – they trade.
+        </p>
+
+        <div class="card-row">
+            <div class="card">
+                <div class="card-title">Trading volume</div>
+                <div class="card-main">61,025,968.45 USDT</div>
+                <div class="card-sub">
+                    One month of clients’ trading volume, showing that the community has real capital and
+                    is comfortable taking positions.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Active traders</div>
+                <div class="card-main">428 clients</div>
+                <div class="card-sub">
+                    These are not passive sign–ups – hundreds of users actually traded under this affiliate.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Onboarding</div>
+                <div class="card-main">8 sign–ups · 5 FTDs</div>
+                <div class="card-sub">
+                    New users come in and fund accounts, giving a solid base to scale with a bigger
+                    Christmas campaign.
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-panel">
+            <div class="metrics-label">Affiliate dashboard snapshot</div>
+            <img src="bybit_dashboard.jpg" alt="Bybit affiliate dashboard" />
+            <div class="metrics-caption">
+                This dashboard confirms that the KOL can convert awareness into volume. Investing in this
+                campaign means backing a creator with proven performance, not just reach.
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPECTATIONS -->
+    <section>
+        <div class="section-tag">Expectations</div>
+        <h2>Expectation alignment</h2>
+        <div class="divider"></div>
+        <p>
+            The campaign builds consistent user flow throughout the year, but the main conversion spike
+            will be driven by a coordinated Christmas push. Crypto Prince’s audience already anticipates
+            holiday giveaways, which makes Christmas the ideal moment to amplify KYC, first–time deposits
+            and futures activation.
+        </p>
+
+        <div class="card-row">
+            <div class="card">
+                <div class="card-title">Users</div>
+                <div class="card-main">Growing traction</div>
+                <div class="card-sub">
+                    Steady sign–ups and KYC completions form the base leading into the Christmas surge.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Volume</div>
+                <div class="card-main">Christmas activation</div>
+                <div class="card-sub">
+                    The 50 percent bonus gives users strong incentive to deposit and begin futures trading
+                    during the holiday event.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Friction</div>
+                <div class="card-main">KYC hesitation</div>
+                <div class="card-sub">
+                    Can be reduced through better communication and reassurance, especially ahead of the
+                    Christmas push.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    Crypto Prince 2025 Giveaway · Draft campaign layout in HTML · Free to adapt for internal or external presentations.
+</footer>
+
+<script>
+    const sections = document.querySelectorAll("section");
+
+    function reveal() {
+        const trigger = window.innerHeight * 0.85;
+        sections.forEach(sec => {
+            const rect = sec.getBoundingClientRect();
+            if (rect.top < trigger) {
+                sec.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+</script>
+
+</body>
+</html>
