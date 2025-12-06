@@ -71,6 +71,39 @@
         z-index: -1;
     }
 
+    .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 12px;
+    }
+
+    .brand-logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 18px rgba(0, 255, 120, 0.9);
+        border: 2px solid rgba(0, 255, 120, 0.9);
+        background: #000;
+        flex-shrink: 0;
+    }
+
+    .brand-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .brand-text {
+        font-size: 0.86rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+        opacity: 0.9;
+    }
+
     .hero-title {
         font-size: clamp(2.4rem, 4vw, 3.1rem);
         font-weight: 750;
@@ -365,6 +398,9 @@
             min-height: auto;
             padding: 46px 0;
         }
+        .brand-row {
+            margin-bottom: 10px;
+        }
     }
 </style>
 </head>
@@ -374,6 +410,15 @@
     <!-- HERO -->
     <section class="hero">
         <div>
+            <div class="brand-row">
+                <div class="brand-logo">
+                    <img src="crypto_prince_logo.png" alt="Crypto Prince Community Logo" />
+                </div>
+                <div class="brand-text">
+                    CRYPTO PRINCE COMMUNITY • CHRISTMAS 2025
+                </div>
+            </div>
+
             <div class="hero-pill">
                 <span>🎄</span> One event · Global · 2025
             </div>
@@ -381,7 +426,7 @@
                 Crypto Prince <span class="hero-gradient">2025 Giveaway</span>
             </h1>
             <p class="hero-subtitle">
-                A single evergreen campaign from Christmas 2024 through the end of 2025:  
+                A single evergreen campaign from Christmas through the end of 2025:  
                 50% deposit bonus to convert anticipation into KYC, first–time deposits  
                 and futures volume across Crypto Prince’s community and 6 supporting KOLs.
             </p>
@@ -408,7 +453,7 @@
             </div>
             <div class="hero-card-row">
                 <span>Focus:</span>
-                <span>Christmas 2024 Big Push</span>
+                <span>Christmas 2025 Big Push</span>
             </div>
             <div class="hero-card-pill">
                 ⭐ Built on proven KOL conversion and giveaway expectations
@@ -731,7 +776,7 @@
 </main>
 
 <footer>
-    Crypto Prince 2025 Giveaway · Draft campaign layout in HTML · Free to adapt for internal or external presentations.
+    Crypto Prince 2025 Giveaway · Community & KOL Campaign Layout · Free to adapt for internal or external presentations.
 </footer>
 
 <script>
